@@ -23,19 +23,9 @@ EMNIST 데이터셋을 사용한 딥러닝 기반 손글씨 인식 웹 애플리
 - **데이터 처리**: NumPy, Pandas, scikit-learn
 - **시각화**: Matplotlib, Seaborn (한글 폰트 지원)
 - **개발 환경**: WSL2 (Ubuntu), Python 3.10.18
-- **웹 서버**: Flask (기존 app.py가 Flask였다면) 또는 Gradio 내장 서버 (새 app.py에 따라)
+- **웹 서버**: Flask 
 
 ## 설치 및 실행
-
-이 프로젝트는 WSL2 (Windows Subsystem for Linux 2) 환경에서 최적화되어 있습니다. GPU 가속을 위해 NVIDIA GPU와 최신 드라이버가 필요합니다.
-
-### 1. WSL2 환경 준비
-
-WSL2 Ubuntu 배포판이 설치되어 있고, NVIDIA GPU 드라이버가 Windows에 설치되어 있는지 확인합니다.
-
-### 2. Python 가상 환경 설정
-
-프로젝트를 위한 독립적인 Python 가상 환경을 구축합니다. TensorFlow와 PyTorch를 독립적으로 사용하기 위해 별도의 가상 환경을 권장합니다.
 
 ```bash
 # 프로젝트 디렉토리로 이동
@@ -108,7 +98,3 @@ handwriting-classifier/
 └── README.md
 └── requirements.txt        # Python 패키지 의존성 파일
 ```
-
-## 참고사항
-
-- **WSL2 환경**: 이 프로젝트는 WSL2 (Ubuntu) 환경에서 개발 및 테스트되었습니다. 
