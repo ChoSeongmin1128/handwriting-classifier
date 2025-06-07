@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Models
+# models 폴더 자체는 추적하되, 그 안의 내용은 추적하지 않음
+models/*
+!models/.gitkeep
+
+# OS-specific
+.DS_Store

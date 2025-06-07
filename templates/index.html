@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 AI 손글씨 인식</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI 손글씨 인식</h1>
+            <p>딥러닝으로 숫자와 영문자를 인식해보세요!</p>
+        </header>
+        
+        <div class="controls">
+            <div class="model-selection">
+                <label for="model-select">🧠 모델 선택:</label>
+                <select id="model-select">
+                    {% for model in models %}
+                    <option value="{{ model }}">{{ model.upper() }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="clear-btn" class="btn btn-danger">🗑️ 지우기</button>
+                <button id="predict-btn" class="btn btn-primary">🔮 예측하기</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="canvas-section">
+                <h3>✏️ 여기에 글자를 그려보세요</h3>
+                <div class="canvas-container">
+                    <canvas id="drawing-canvas" width="280" height="280"></canvas>
+                </div>
+                <div class="canvas-info">
+                    <small>💡 팁: 굵고 선명하게 그려주세요!</small>
+                </div>
+            </div>
+
+            <div id="results" class="results hidden">
+                <h3>🎯 예측 결과</h3>
+                <div class="model-info">
+                    <span id="model-used"></span>
+                </div>
+                <div id="predictions"></div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h4>📚 사용 가능한 문자</h4>
+            <div class="character-types">
+                <div class="char-group">
+                    <h5>🔢 숫자</h5>
+                    <div class="chars">0, 1, 2, 3, 4, 5, 6, 7, 8, 9</div>
+                </div>
+                <div class="char-group">
+                    <h5>🔤 대문자</h5>
+                    <div class="chars">A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z</div>
+                </div>
+                <div class="char-group">
+                    <h5>🔡 소문자</h5>
+                    <div class="chars">a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z</div>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h4>📝 사용법</h4>
+                <ul>
+                    <li>🖱️ 마우스나 터치로 캔버스에 글자를 그려주세요</li>
+                    <li>🧠 CNN과 ResNet 모델의 성능을 비교해보세요</li>
+                    <li>✨ 명확하고 큰 글씨로 그릴수록 정확도가 높아집니다</li>
+                    <li>🔄 다른 글자를 시도하려면 '지우기' 버튼을 눌러주세요</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
