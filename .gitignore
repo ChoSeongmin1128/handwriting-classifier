@@ -12,4 +12,4 @@ models/*
 .DS_Store
 
 # Gradio flagged directory
-gradio/flagged/
+.gradio/flagged/
