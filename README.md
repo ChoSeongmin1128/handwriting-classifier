@@ -19,7 +19,7 @@ EMNIST 데이터셋을 사용한 딥러닝 기반 손글씨 인식 웹 애플리
 ## 사용 기술
 - **딥러닝 프레임워크**: TensorFlow 2.19.0 (GPU 지원 포함), Keras
 - **데이터셋**: EMNIST byclass (TensorFlow Datasets 활용)
-- **웹 인터페이스**: Gradio
+- **웹 인터페이스**: Flask
 - **데이터 처리**: NumPy, Pandas, scikit-learn
 - **시각화**: Matplotlib, Seaborn (한글 폰트 지원)
 - **개발 환경**: WSL2 (Ubuntu), Python 3.10.18
